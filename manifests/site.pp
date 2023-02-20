@@ -4,7 +4,7 @@ node '10.0.2.15' {
   include role::master_server
   file {'/root/README':
     ensure => file,
-    content => $fqdn,
+    content => "Welcome to ${fqdn}\n",
   }
 }
 
