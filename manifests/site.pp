@@ -2,7 +2,7 @@ node default {
 }
 node '10.0.2.15' {
   include role::master_server
-  file {'root/README':
+  file {'/root/README':
     ensure => file,
     content => $fqdn,
   }
