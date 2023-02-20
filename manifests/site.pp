@@ -1,12 +1,11 @@
 node default {
-  file { '/root/README':
-    ensure => file,
-    content => 'This is a readme',
-    owner   => 'root',
-  }
 }
 node '10.0.2.15' {
   include role::master_server
+  file {'root/README':
+    ensure => file,
+    content => $fqdn,
+  }
 }
 
 node /^web/ {
